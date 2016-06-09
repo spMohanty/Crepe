@@ -1,7 +1,3 @@
---[[ Tester for Crepe
-By Xiang Zhang @ New York University
---]]
-
 require("sys")
 
 local Test = torch.class("Test")

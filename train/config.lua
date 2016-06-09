@@ -8,18 +8,18 @@ require("nn")
 -- The namespace
 config = {}
 
-local alphabet = "abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
+local alphabet = "abcdefghijklmnopqrstuvwxyz0123456789,;.!?:'\"/\\|_@#$%^&*~`+-=<>()[]{}"
 
 -- Training data
 config.train_data = {}
-config.train_data.file = paths.concat(paths.cwd(), "../data/train.t7b")
+config.train_data.file = paths.concat(paths.cwd(), "../raw_data/train.t7b")
 config.train_data.alphabet = alphabet
 config.train_data.length = 1014
 config.train_data.batch_size = 128
 
 -- Validation data
 config.val_data = {}
-config.val_data.file =  paths.concat(paths.cwd(), "../data/test.t7b")
+config.val_data.file =  paths.concat(paths.cwd(), "../raw_data/test.t7b")
 config.val_data.alphabet = alphabet
 config.val_data.length = 1014
 config.val_data.batch_size = 128
@@ -84,8 +84,8 @@ config.mui.n = 16
 -- Main program
 config.main = {}
 config.main.type = "torch.CudaTensor"
-config.main.eras = 10
-config.main.epoches = 5000
+config.main.eras = 50
+config.main.epoches = 100
 config.main.randomize = 5e-2
 config.main.dropout = true
 config.main.save = paths.concat(paths.cwd())
